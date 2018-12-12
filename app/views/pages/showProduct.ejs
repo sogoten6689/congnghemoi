@@ -1,0 +1,43 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                    <img class="watch-img" src="/static/img/<%=product.id%>.jpg" alt="">
+            </div>
+            <div class="col-xs-8">
+                <div>Đồng hồ :<%= product.name %></div>
+                <div> Giá cũ:  <span class="del"> <%= product.price+5 %> </span>  USD</div>
+                <div>Giá: <%= product.price %> USD </div>
+                <div>Bảo hành: <%= product.guarantee %> month </div>
+                <div>Thông tin: <%= product.description %></div>
+                <div class="pT-20">
+                    <a class="btn btn-primary" href="/add/<%=product.id%>"> Thêm vào giỏ</a>
+                    <a class="btn btn-primary" href="/buy/<%=product.id%>"> Mua ngay </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

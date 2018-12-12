@@ -1,0 +1,141 @@
+.mT-30{
+    margin-top: 30px;
+  }
+  .mT-10{
+    margin-top: 10px;
+  }
+  .pT-20{
+    padding-top: 20px;
+  }
+  .pT-10{
+    padding-top: 10px;
+  }
+  .header{
+    padding: 0px 100px;
+    background-color: black;
+  }
+  .header a{
+    color: white;
+  }
+  .header img{
+    width: 130px;
+  }
+  .header .row button {
+    margin-left: 10px;
+    height: 30px;
+    padding: 0px 14px;
+  }
+  .navbar {
+    z-index: 1;
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+    /*footer--------------------------------------*/
+  .footer{
+    background-color: black;
+    align: center;
+    padding: 30px;
+  }
+  .footer>div.img-footer{
+    padding: auto;
+  }
+  .footer img{
+    margin: 0 auto;
+    width: 130px;
+  }
+  .container .row .title{
+    background-color: #E2E2E2;
+  }
+  .container .row .col-xs-3>div{
+    border: 1px solid red;
+    margin: 3px;
+  }
+  .container .del {
+    text-decoration: line-through;
+  }
+  .container .watch-img{
+    width: 60%;
+  }
+  .product .title-img{
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #000 ;
+  }
+  .float-right{
+    float: right;
+  }
+  .cart{
+    padding: 10px;
+    font-size: 20px;
+  }
+  .cart-img{
+    width: 20%;
+  }
+  .pL-10{
+    padding-left: 10px;
+  }
+  .pR-10{
+    padding-right: 10px;
+  }
+/* login page */
+.login{
+  width: 50%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

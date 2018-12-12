@@ -1,0 +1,50 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container login">
+            <div class="text-center">
+                    <h1>Đăng kí miễn phí!</h1>
+                    <h2>Mua hàng liền tay</h2>
+                  </div>
+            <form action="/users/add" method="POST">
+                <div class="form-group">
+                  <label for="email">ID:</label>
+                  <input type="text" class="form-control" id="user_id" name="user_id">
+                </div>
+                <div class="form-group">
+                        <label for="email">Number:</label>
+                        <input type="text" class="form-control" id="user_number"  name="user_number">
+                      </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="password"  name="user_password">
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-default">Đăng kí</button>
+              </form>
+    </div>
+
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

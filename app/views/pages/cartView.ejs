@@ -1,0 +1,77 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+        <% if (totalPrice !=0) { %> 
+            <div class="row">
+                <div class="col-xs-4 pT-20 text-center">Sản phẩm</div>
+                <div class="col-xs-2 pT-20">Giá</div>
+                <div class="col-xs-2 pT-20">Số lượng</div>
+                <div class="col-xs-2 pT-20">Thành tiền</div>
+                <div class="col-xs-2 pT-20">Thao tác</div>
+            </div>
+            <% products.forEach(function(x) { %>
+            <div class="row">
+                <div class="col-xs-1 pT-20 text-right">
+                    <a href="/products/<%=x.item.id%>"><%= x.item.name%></a>
+                </div>
+                <div class="col-xs-3">
+                    <img class="cart-img" src="/static/img/<%=x.item.id%>.jpg" alt="">
+                </div>
+                <div class="col-xs-2 pT-20">
+                    <%= x.item.price %>
+                </div>
+                <div class="col-xs-1 pT-20">
+                    <%= x.quantity %>
+                </div>
+                <div class="col-xs-2 pT-20">
+                    <%= x.item.price %>
+                </div>
+                <div class="col-xs-3 pT-20 text-center">
+                    <a class="btn btn-primary" href="/add/<%=x.item.id%>">Thêm</a>
+                    <a class="btn btn-danger" href="/remove/<%=x.item.id%>">Xóa</a>
+                </div>
+            </div>
+            <% }); %>
+     
+    </div>
+    <div class="row">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-3">
+            <span>Tổng tiền: </span> 
+            <%= totalPrice %>
+        </div>
+        <div class="col-xs-3">
+            <a href="/save" class="btn btn-primary"  aria-hidden="true">Thanh Toán</a>
+        </div>
+    </div>
+    <% } else { %> 
+        <div class="text-center pB-30"> 
+            <a href="/" ><img class="product-img" src="/static/img/addCart.jpg" alt=""></a>
+            <h1>Giỏ hàng của bạn đang rỗng</h1>
+            <h1>Còn rất nhiều đồng hồ đẹp chờ bạn lựa chọn!</h1>
+            <h1>Vui Lòng chọn sản phẩm!</h1>
+        </div>
+    <% } %>
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

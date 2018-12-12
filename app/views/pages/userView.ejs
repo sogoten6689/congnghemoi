@@ -1,0 +1,80 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+        <div class="row text-center">
+           
+           <div class="col-xs-4">
+                    <img class="produtc-img" src="/static/img/user.jpg" alt="">
+           </div>
+           <div class="col-xs-2 text-right">
+                <div>
+                    ID: 
+                </div>
+                <div>
+                    Họ và tên: 
+                </div>
+                <div>
+                    Giới tính:
+                </div>
+                <div>
+                    Số điện thoại:
+                </div>
+                <div>
+                    E-mail:
+                </div>
+                <div>
+                    Địa chỉ:
+                </div>
+                <div class="pT-10 pR-10">
+                    <a class="btn btn-primary" href="/users/edit/:id">Chỉnh sửa</a>
+                </div>
+            </div>
+            <div class="col-xs-4 text-left">
+                <div>
+                    <%= session.user.id %>
+                </div>
+                <div>
+                    <%= session.user.name %>
+                </div>
+                <div>
+                    <%= session.user.gender %>
+                </div>
+                <div>
+                    <%= session.user.email %>
+                </div>
+                <div>
+                    <%= session.user.number %>
+                </div>
+                <div>
+                    <%= session.user.address %>
+                </div>
+                <div class="pT-10 pL-10">
+                    <a class="btn btn-danger" href="/logout">Đăng xuất</a>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+    <% session.address = "home"; %>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+        <div class="row">
+            <% session.products.forEach(function(watch) { %>
+            <div class="col-xs-3 text-center">
+                <div class="12">
+                    <img class="watch-img" src="/static/img/<%=watch.id%>.jpg" alt="">
+                    <div class="title">
+                        <a href="/products/<%=watch.id%>">
+                            <%= watch.name%></a>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div><%= watch.price %> USD</div>
+                                <div>
+                                    <a href="#">Buy now</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div><span class="del"> <%= watch.price + 30 %>    </span> USD</div>
+                                <div>
+                                    <a href="/add/<%=watch.id%>" method="POST" class="btn btn-default pull-right" role="button">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true">Add</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

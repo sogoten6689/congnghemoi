@@ -1,0 +1,50 @@
+<!-- The sidebar -->
+<div class="sidebar">
+  <a class="active" href="/">Home</a>
+  <a href="/carts"> Giỏ (
+    <% if (session.cart) { %>
+    <%= session.cart.totalItems %>
+    <%} else {%>
+    <%= 0 %>
+    <%} %>
+    )</a>
+
+  <% if (session.user == null) { %>
+  <a href="/login">Đăng nhập</a>
+  <%  } else { %>
+  <a href="/users/<%=session.user.id %>">
+    <%= session.user.name %></a>
+  <% } %>
+  <% if (session.cart) { %>
+    <a href="/save">Thanh Toán</a>
+    <%} %>
+    <a href="/nhanh">Nhanh</a>>
+  
+</div>
+<style>
+  /* The side navigation menu */
+  .sidebar {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 280px;
+    overflow: auto;
+  }
+
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+</style>

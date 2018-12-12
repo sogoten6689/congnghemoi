@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Apples",
+      "description": "Thiết kế tổng thể theo phong cách sang trọng nhưng vẫn trẻ trung",
+      "guarantee": 12,      "type":  1,       "price": 25
+    },
+    {
+      "id": 2,
+      "name": "SamSung",
+      "description": " Mặt kính vát 3D CUBES có khả năng chống trầy tốt, đặc biệt nếu bạn đưa ra ngoài ánh sáng mạnh thì sẽ thấy lấp lánh ánh kim",
+      "guarantee": 12,       "type":  2,       "price": 30
+    },
+    {
+      "id": 3,
+      "name": "Sony",
+      "description": "Thiết kế tổng thể theo phong cách sang trọng nhưng vẫn trẻ trung",
+      "guarantee": 12,       "type":  2,       "price": 15
+    },
+    {
+      "id": 4,
+      "name": "LG",
+      "description": "Chất liệu mặt kính: kính cứng pha khoáng (chống trầy xước trong sinh hoạt hàng ngày khá tốt)",
+      "guarantee": 12,       "type":  1,       "price": 100
+    },
+    {
+      "id": 5,
+      "name": "LG",
+      "description": "Đồng hồ chính hãng 100%, chứng minh hàng giả shop đền gấp đôi",
+      "guarantee": 12,       "type":  4,       "price": 100
+    },
+    {
+      "id": 6,
+      "name": "LG",
+      "description": "Khả năng chịu nước: 1ATM (rửa tay, đi mưa nhẹ... Nên tránh tiếp xúc với hóa chất như xà phòng, nước tẩy rửa, không mang khi bơi lội... của bền tại người mà)",
+      "guarantee": 12,       "type":  4,       "price": 100
+    },
+    {
+      "id": 7,
+      "name": "LG",
+      "description": "Những con số được thay thế bằng những viên kim cương nhân tạo kết hợp cùng với mặt kính khối mang đến sự sang trọng, thanh lịch",
+      "guarantee": 12,       "type":  4,       "price": 100
+    },
+    {
+      "id": 8,
+      "name": "LG",
+      "description": "Phiên bản mới góc cạnh hơn - man lỳ nam tính hơn. Với kích thước mặt khá lớn đến 52mm sản phẩm chỉ phù hợp với bạn Nam có kích cỡ trung bình to không phù hợp với bạn nam tay nhỏ nhé!",
+      "guarantee": 12,       "type":  2,       "price": 100
+    },
+    {
+      "id": 9,
+      "name": "LG",
+      "description": "Mặt kính nhập khẩu cao cấp, chống nước, chịu ma sát tốt, vỏ ngoài PU đàn hồi cao cấp, siêu chống rung",
+      "guarantee": 12,       "type":  5,       "price": 100
+    },
+    {
+      "id": 10,
+      "name": "LG",
+      "description": "Mặt dạ quang EL nhập khẩu giúp bạn nhìn thời gian rõ nét dưới điều kiện thiếu ánh sáng",
+      "guarantee": 12,       "type":  1,       "price": 100
+    },
+    {
+      "id": 11,
+      "name": "LG",
+      "description": "Máy, pin nhập khẩu Nhật Bản đảm bảo chuẩn xác, tuổi thọ cao; chống nước 5ATM thoải mái rửa tay, đi mưa, tắm không cần phải tháo.",
+      "guarantee": 12,       "type":  6,       "price": 100
+    },
+    {
+      "id": 12,
+      "name": "LG",
+      "description": "Đồng hồ điện tử thể thao Skmei phối màu kiểu dáng thể thao khỏe khoắn, chất liệu cao cấp, phù hợp với những người chơi thể thao, làm việc ngoài trời...",
+      "guarantee": 12,       "type":  6,       "price": 100
+    }
+  ]
+  

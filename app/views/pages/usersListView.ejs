@@ -1,0 +1,93 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+            <% if (session.users != null) {%>
+                <div class="text-center">
+                    <h1>
+                            Danh sách tài khoản
+                    <a href="/users/add" class="btn btn-primary">Thêm Account</a>    
+                    </h1>
+
+                    </div>
+                    <div class="row">
+                            <div class="col-xs-6">Admin</div>
+                        </div>
+                <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         <% session.users.filter(function(item) { if( item.type == 0 ){ %>
+                            <tr>
+                                <td><%= item.id %></td>
+                                <td><%=item.name%></td>
+                                <td> <%=item.email %></td>
+                                <td> <%=item.number %></td>
+                                <td> <%=item.gender %></td>
+                                <td> <%=item.address %></td>
+                          </tr>
+                          <%}  }); %>
+                        </tbody>
+                      </table>
+                      <div class="row">
+                            <div class="col-xs-6">User:</div>
+                        </div>
+                      <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Number</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                             <% session.users.filter(function(item) { if( item.type != 0 ){ %>
+                                <tr>
+                                    <td><%= item.id %></td>
+                                    <td><%=item.name%></td>
+                                    <td> <%=item.email %></td>
+                                    <td> <%=item.number %></td>
+                                    <td> <%=item.gender %></td>
+                                    <td> <%=item.address %></td>
+                              </tr>
+                              <%}  }); %>
+                            </tbody>
+                          </table>
+                <% } else { %>
+                    <div class="text-center"> Danh rỗng vui lòng kiểm tra lại</div>
+                    <% }   %>
+    </div>
+
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

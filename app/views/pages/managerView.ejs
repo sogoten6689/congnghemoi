@@ -1,0 +1,42 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+    <% session.address = "home"; %>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+       <div class="row">
+            <div class="col-xs-3">
+                <a her class="btn btn-primary" href="/users" >Quản lý tài khoản</a>
+            </div>
+            <div class="col-xs-3">
+                <input class="btn btn-primary" value="xxx" />
+            </div>
+            <div class="col-xs-3">
+                <input class="btn btn-primary" value="xxx" />
+            </div>
+            <div class="col-xs-3">
+                <input class="btn btn-primary" value="xxx" />
+            </div>
+       </div>
+    </div>
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>
