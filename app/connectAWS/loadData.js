@@ -1,4 +1,4 @@
-var AWSConnect = require("../connectAWS/ConnectAWS");
+var AWSConnect = require("./connectAWS");
 var docClient = AWSConnect.docClient;
 var fs = require("fs");
 var helper = require("../helpers/helper")
