@@ -1,0 +1,79 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+
+    <div class="container">
+            <% if (session.products != null) { %>
+            <div class="text-center">
+                <h1>
+                    Danh sách sản phảm
+                    <a href="/#" class="btn btn-primary">Thêm sản phẩm</a>
+                </h1>
+            </div>
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Mô tả</th>
+                            <th>Loại</th>
+                            <th>Bảo hành</th>
+                            <th>Giá</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% session.products.forEach(function(item) { %>
+                        <tr>
+                            <td>
+                                <%= item.id %>
+                            </td>
+                            <td>
+                                <%=item.name %>
+                            </td>
+                            <td>
+                                <%=item.description %>
+                            </td>
+                            <td>
+                                <%=item.type %>
+                            </td>
+                            <td>
+                                <%=item.guarantee %>
+                            </td>
+                            <td>
+                                <%=item.price %>
+                            </td>
+                            <td>
+                                <a>Sua</a> <a>Xoa</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+    
+            <% } else { %>
+            <div class="text-center"> Danh rỗng vui lòng kiểm tra lại</div>
+            <% } %>
+        </div>
+    <div class="footer">
+        <% include ../partials/footer %>
+    </div>
+
+</body>
+
+</html>

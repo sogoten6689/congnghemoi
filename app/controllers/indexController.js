@@ -2,6 +2,8 @@ var fs = require('fs');
 var path = require('path');
 var Cart = require('../models/cart');
 var normalPath = path.normalize(__dirname + '../../data/product.json');
+var helper = require("../helpers/helper")
+
 
 var products = JSON.parse(fs.readFileSync(normalPath, 'utf8'));
 var accUsers = require("../data/user");
@@ -20,7 +22,9 @@ exports.homeGET = function (req, res, next) {
 
     req.session.address = "home";
     req.session.title = "Watch shopping2";
-    req.session.products = products;
+    if(req.session.products == null){
+        req.session.products = products;
+    }
     res.render('index');
 };
 
@@ -81,18 +85,31 @@ exports.homeSave = function (req, res, next) {
     }
     else {
         user_current = req.session.user;
-        var textData = JSON.stringify(req.session.cart);
-        fs.appendFile('../bao_cao_visual/app/data/textData.json',textData, function (err) {
-            if (err) {
-                throw err;
+        var params = {
+            TableName: "Carts",
+            Item: {
+                no: helper.genrenateID(),
+                name: req.session.user.id,
+                type: 0,
+                productsList: req.session.cart.items ,
+                totalItems: req.session.cart.totalItems,
+                totalPrice: req.session.carttotalPrice
             }
-            req.session.err = null;
+        };
+        docClient.put(params, function(err, data){
+            if (err) {
+                console.log("loi");
+                console.error("Unable to put the table. Error JSON:", JSON.stringify(err, null, 2));
+            }else{
+                console.log("ok");
+            }
             
-            req.session.user = user_current;
-
-            res.redirect('/');  
         });
+        req.session.err = null;
+        req.session.cart = null;
+        req.session.user = user_current;
 
+        res.redirect('/');  
     }
 
 }
@@ -109,7 +126,6 @@ exports.postLogin = function (req, res, next) {
             console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
         }else{
             var user = data.Items.filter(function (item) {
-                console.log(item);
                 return item.id == user_id && item.pass == user_pass;
             });
             if (user.length > 0) {

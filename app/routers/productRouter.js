@@ -1,10 +1,16 @@
 "user strict";
 
 router = require('express').Router();
+
 var productController = require('../controllers/productController');
 
-router.route('/:id').get(productController.getProduct);
 
+router.route('/').get(productController.getAllProduct);
+
+
+router.route('/type/:id').get(productController.getProductType);
+
+router.route('/:id').get(productController.getProduct);
 
 
 

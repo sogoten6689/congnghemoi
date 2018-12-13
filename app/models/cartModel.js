@@ -2,13 +2,13 @@ var AWSConnect = require("../connectAWS/ConnectAWS");
 var dynamodb = AWSConnect.dynamoConnection;
 
 var params = {
-    TableName: "Products",
+    TableName: "Carts",
     KeySchema: [
-        { AttributeName: "id", KeyType: "HASH"},
+        { AttributeName: "no", KeyType: "HASH"},
         { AttributeName: "name", KeyType: "RANGE"}
     ],
     AttributeDefinitions : [
-        {AttributeName:"id", AttributeType:"S"},
+        {AttributeName:"no", AttributeType:"N"},
         {AttributeName:"name", AttributeType:"S"}
     ],
     ProvisionedThroughput: {

@@ -23,6 +23,7 @@
         <div class="col-xs-4">
             <% if (session.user == null) { %>
                 <a href="/login">Đăng nhập</a>
+                <a href="/registere">Đăng kí</a>
           <%  } else { %>
             <a href="/users/<%= session.user.id %>"><%= session.user.name %></a><br>
             <a href="/logout">Đăng xuất</a>            
@@ -32,35 +33,35 @@
    </div>
 <div class="navbar">
     <div class="dropdown">
-            <a href="/" class="fa fa-home" aria-hidden="true">Home</a>
+            <a href="/products/type/0" class="fa fa-home" aria-hidden="true">Home</a>
     </div>
     <div class="dropdown">
-        <a href="/#" aria-hidden="true">Mới về
+        <a href="/products/type/1" aria-hidden="true">Mới về
             <i class="fa fa-caret-down"></i>
         </a>
     </div>
     <div class="dropdown">
-            <a href="/#" aria-hidden="true">Hot
+            <a href="/products/type/2" aria-hidden="true">Hot
                 <i class="fa fa-caret-down"></i>
             </a>
         </div>
     <div class="dropdown">
-        <a href="/#" aria-hidden="true">Đồng hồ thông minh
+        <a href="/products/type/3" aria-hidden="true">Phụ kiện
             <i class="fa fa-caret-down"></i>
         </a>
     </div>
     <div class="dropdown">
-        <a href="/#" aria-hidden="true">Đồng hồ cổ điển
+        <a href="/products/type/4" aria-hidden="true">Đồng hồ cổ điển
             <i class="fa fa-caret-down"></i>
         </a>
     </div>
     <div class="dropdown">
-        <a href="/#" aria-hidden="true">Đồng hồ Casio
+        <a href="/products/type/5" aria-hidden="true">Đồng hồ Casio
             <i class="fa fa-caret-down"></i>
         </a>
     </div>
     <div class="dropdown">
-        <a href="/#" aria-hidden="true">Đồng hồ Ý
+        <a href="/products/type/6" aria-hidden="true">Đồng hồ Ý
             <i class="fa fa-caret-down"></i>
         </a>
     </div>

@@ -1,7 +1,10 @@
 "user strict";
 
 router = require('express').Router();
-var indexController = require('../controllers/indexController')
+
+var indexController = require('../controllers/indexController');
+
+var userController = require('../controllers/userController')
 
 router.get('/', indexController.homeGET);
 
@@ -24,5 +27,7 @@ router.get('/nhanh', indexController.homeNhanh);
 router.get('/save', indexController.homeSave);
 
 router.get('/user', indexController.homeShowUser);
+
+router.get('/registere', userController.getUserSigin);
 
 module.exports = router;

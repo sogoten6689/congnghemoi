@@ -41,7 +41,6 @@ app.use('/products', require('./app/routers/productRouter'));
 app.use('/users', require('./app/routers/userRouter'));
 
 
-// app.use('/login', require('./app/routers/loginRoutes'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
