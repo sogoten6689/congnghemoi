@@ -10,7 +10,7 @@ var accUsers = require("../data/user");
 var Cart = require('../models/cart');
 var user_current = "";
 
-var AWSConnect = require("../connectAWS/ConnectAWS");
+var AWSConnect = require("../connectAWS/connectAWS");
 var docClient = AWSConnect.docClient;
 
 
