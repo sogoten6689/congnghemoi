@@ -1,6 +1,6 @@
 var path = require('path');
 
-var AWSConnect = require("../connectAWS/ConnectAWS");
+var AWSConnect = require("../connectAWS/connectAWS.js");
 var docClient = AWSConnect.docClient;
 
 exports.getUsers = function(req, res, next) {

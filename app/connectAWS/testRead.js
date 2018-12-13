@@ -1,4 +1,4 @@
-var AWSConnect = require("../connectAWS/ConnectAWS");
+var AWSConnect = require("./connectAWS.js");
 var docClient = AWSConnect.docClient;
 
 var params = {

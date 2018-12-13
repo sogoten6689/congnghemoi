@@ -1,4 +1,4 @@
-var AWSConnect = require("../connectAWS/ConnectAWS");
+var AWSConnect = require("../connectAWS/connectAWS.js");
 var dynamodb = AWSConnect.dynamoConnection;
 
 var params = {
