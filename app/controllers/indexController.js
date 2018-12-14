@@ -5,15 +5,27 @@ var normalPath = path.normalize(__dirname + '../../data/product.json');
 var helper = require("../helpers/helper")
 
 
-var products = JSON.parse(fs.readFileSync(normalPath, 'utf8'));
+// var products = JSON.parse(fs.readFileSync(normalPath, 'utf8'));
 var accUsers = require("../data/user");
 var Cart = require('../models/cart');
 var user_current = "";
 
 var AWSConnect = require("../connectAWS/connectAWS");
 var docClient = AWSConnect.docClient;
-
-
+var products;
+var product_params = {
+    TableName: "Products"
+};
+docClient.scan(product_params, function(err, data){
+    if (err) {
+        console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
+    }else{
+         products = data.Items.filter(function (item) {
+            return item;
+        });
+    }
+    
+});
 
 exports.homeGET = function (req, res, next) {
     if (user_current != "") {
@@ -21,10 +33,9 @@ exports.homeGET = function (req, res, next) {
     }
 
     req.session.address = "home";
-    req.session.title = "Watch shopping2";
-    if(req.session.products == null){
+    req.session.title = "Watch shopping";
+    if(req.session.products ==null)
         req.session.products = products;
-    }
     res.render('index');
 };
 
@@ -75,8 +86,22 @@ exports.homeLogout = function (req, res, next) {
     res.render('login');
 }
 exports.homeNhanh = function (req, res, next) {
-    req.session.user = accUsers[0];
-    res.redirect('/');
+    var product_params = {
+        TableName: "Users"
+    };
+    docClient.scan(product_params, function(err, data){
+        if (err) {
+            console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
+        }else{
+             accUsers = data.Items.filter(function (item) {
+                return item.id=="lamnn";
+            });
+            req.session.user = accUsers[0];
+            res.redirect('/');
+
+        }
+        
+    });
 }
 
 exports.homeSave = function (req, res, next) {
@@ -85,15 +110,24 @@ exports.homeSave = function (req, res, next) {
     }
     else {
         user_current = req.session.user;
+        var cart = new Cart(req.session.cart);
+        var listItemsCart =cart.getItems();
+        var cartlistProduct =[]
+        listItemsCart.forEach(function(x){
+            var valueItem = [x.item.name, x.quantity, x.price];
+            cartlistProduct.push(valueItem);
+        });
+
         var params = {
             TableName: "Carts",
             Item: {
                 no: helper.genrenateID(),
                 name: req.session.user.id,
+                number: req.session.user.number,
                 type: 0,
-                productsList: req.session.cart.items ,
                 totalItems: req.session.cart.totalItems,
-                totalPrice: req.session.carttotalPrice
+                listItems: cartlistProduct,
+                totalPrice: req.session.cart.totalPrice
             }
         };
         docClient.put(params, function(err, data){
@@ -147,6 +181,6 @@ exports.postLogin = function (req, res, next) {
 exports.homeShowUser = function (req, res) {
     var data = req.body;
     res.render('userView',
-        { user: data.user, title: "Watch shopping", products: products, cart: cart }
+        { user: data.user, products: products, cart: cart }
     );
 };

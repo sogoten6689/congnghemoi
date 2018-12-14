@@ -102,9 +102,9 @@
   .container .row .title{
     background-color: #E2E2E2;
   }
-  .container .row .col-xs-3>div{
-    border: 1px solid red;
-    margin: 3px;
+  .container .row div.border-red{
+    border: 5px solid brown;
+    margin: 5px;
   }
   .container .del {
     text-decoration: line-through;

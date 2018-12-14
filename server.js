@@ -59,4 +59,6 @@ app.use(function (err, req, res, next) {
     res.render('err',{title: 'Page error'});
 });
 
-app.listen(port);
+app.listen(port,(res,req)=>{
+    console.log("listen port: "+port);
+});

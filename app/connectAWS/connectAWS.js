@@ -8,8 +8,8 @@ AWS.config.update({
 var dynamodb = new AWS.DynamoDB();
 AWS.config.update({
     region: "us-west-2",
-    accessKeyId:"AKIAJKK4AT63DDUIYYVA",
-    secretAccessKey: "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"
+    accessKeyId:"AKIAILHHVDNJJYSQEULQ",
+    secretAccessKey: "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"
 });
 
 var dynamodb = new AWS.DynamoDB();

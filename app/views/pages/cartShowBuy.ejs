@@ -1,0 +1,63 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+    <script></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <% include ../partials/header %>
+    </div>
+
+    <% include ../partials/sidenav %>
+
+    <div class="container">
+        <% if (session.listcartshow != null) { %>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Guest</th>
+                    <th>Number</th>
+                    <th>Items</th>
+                    <th>totalItems</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                 <% session.listcartshow.forEach(function(item) { %>
+                    <tr>
+                        <td><%= item.no %></td>
+                        <td><%=item.name%></td>
+                        <td> <%=item.number %></td>
+                        <td>
+                            <% item.listItems.forEach(function(x){ %>
+                            <%= x[0] %> --- Số lượng: <%= x[1] %> ---- Giá : <%= x[2] %>
+                             <br>
+                             <%});%>
+                     </td>
+                        <td> <%=item.totalItems %></td>
+                        <td> <%=item.totalPrice %></td>
+                        <td> <%=item.type %></td>
+                  </tr>
+                  <%}  ); %>
+                </tbody>
+              </table>
+        <% } else { %>
+        <div class="text-center pB-30">
+            <h1>Đơn hàng đang rỗng vui lòng marketing!</h1>
+        </div>
+        <% } %>
+        <div class="footer">
+            <% include ../partials/footer %>
+        </div>
+
+</body>
+
+</html>

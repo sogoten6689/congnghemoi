@@ -22,7 +22,7 @@
             <div class="text-center">
                 <h1>
                     Danh sách sản phảm
-                    <a href="/#" class="btn btn-primary">Thêm sản phẩm</a>
+                    <a href="/products/add" class="btn btn-primary">Thêm sản phẩm</a>
                 </h1>
             </div>
             <table class="table">
@@ -59,7 +59,7 @@
                                 <%=item.price %>
                             </td>
                             <td>
-                                <a>Sua</a> <a>Xoa</a>
+                                <a>Sua</a> <a href="/products/delete/<%=item.name%>">Xoa</a>
                             </td>
                         </tr>
                         <% }); %>
